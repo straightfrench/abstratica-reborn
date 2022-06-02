@@ -7,12 +7,65 @@
 body {
   background: linear-gradient(30deg, rgba(27, 189, 225, 0.5) 0%, rgba(38, 94, 151, 0.5) 32.64%, rgba(184, 8, 232, 0.5) 92.72%);
   background-blend-mode:hard-light;
-
   font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
   color: white;
   padding: 0;
   margin: 0;
 }
+
+
+/* Header */
+
+header {
+  background-color: black;
+  font-family: inherit;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  color: inherit;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 200px;
+}
+
+.main-nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header h1 {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 108px;
+  padding: 0;
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+
+header a:hover {
+  color: rgb(185, 185, 185);
+}
+
+header button {
+  border-radius: 20px;
+  background-color: #C64EFF;
+  color: white;
+  width: 128px;
+  height: 40px;
+}
+
+
+/* Footer */
 
 footer {
   background-color: black;
