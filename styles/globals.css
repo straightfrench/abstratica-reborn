@@ -15,10 +15,16 @@ body {
   margin: 0;
 }
 
+/* I can't figure out how to rotate this image like in the design */
+.background-squiggle {
+  rotate: 66.11deg;
+  height: 1752px;
+  width: 405px;
+}
 
 /* Header */
 
-header {
+header{
   background-color: black;
   font-family: inherit;
   display: flex;
@@ -28,7 +34,14 @@ header {
   color: inherit;
   justify-content: space-between;
   padding: 0 50px;
+}
+
+.big {
   height: 200px;
+}
+
+.small {
+  height: 112px;
 }
 
 .main-nav ul {

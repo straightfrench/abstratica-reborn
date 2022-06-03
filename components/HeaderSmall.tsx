@@ -2,12 +2,11 @@ import { WalletConnectButton } from "@solana/wallet-adapter-react-ui";
 import Image from "next/image";
 import Link from "next/link";
 
-const HeaderBig = () => {
+const HeaderSmall = () => {
   return (
-    <header className="big">
-      <Image src={"/abslogo.jpg"} alt="Abstratica logo" width={112} height={112}/>
+    <header className="small">
+      <Image src={"/abslogo.jpg"} alt="Abstratica logo" width={90} height={90}/>
       <div>
-        <h1>Abstratica</h1>
         <nav className="main-nav">
           <ul>
             <li><Link href={"/"}>Home</Link></li>
@@ -22,8 +21,8 @@ const HeaderBig = () => {
       <div>
         <WalletConnectButton />
       </div>
-    </header>    
+    </header>
   );
 }
 
-export default HeaderBig;
+export default HeaderSmall;
