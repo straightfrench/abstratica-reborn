@@ -15,13 +15,6 @@ body {
   margin: 0;
 }
 
-/* I can't figure out how to rotate this image like in the design */
-.background-squiggle {
-  rotate: 66.11deg;
-  height: 1752px;
-  width: 405px;
-}
-
 /* Header */
 
 header{
