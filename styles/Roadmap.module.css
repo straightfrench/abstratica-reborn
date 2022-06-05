@@ -1,0 +1,15 @@
+.title{
+  text-align: center;
+  align-items: center;
+  line-height: 54px;
+  font-size: 36px;
+  font-weight: 400;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container{
+  height: 80vh;
+  width: 100vw;
+  border-radius: 19px;
+  overflow-y: scroll;
+}
