@@ -6,7 +6,12 @@ import * as walletAdapterWallets from '@solana/wallet-adapter-wallets';
 
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const endpoint = web3.clusterApiUrl('devnet')
-  const wallets = [new walletAdapterWallets.PhantomWalletAdapter(), new walletAdapterWallets.SolletExtensionWalletAdapter(), new walletAdapterWallets.GlowWalletAdapter()]
+  const wallets = [
+      new walletAdapterWallets.PhantomWalletAdapter(),
+      new walletAdapterWallets.SolletExtensionWalletAdapter(),
+      new walletAdapterWallets.GlowWalletAdapter()
+    ]
+    
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={[...wallets]}>
