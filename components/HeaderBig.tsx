@@ -1,6 +1,7 @@
-import { WalletConnectButton } from "@solana/wallet-adapter-react-ui";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import Image from "next/image";
 import Link from "next/link";
+import WalletContextProvider from "./WalletContextProvider";
 
 const HeaderBig = () => {
   return (
@@ -18,10 +19,9 @@ const HeaderBig = () => {
           </ul>
         </nav>
       </div>
-      
-      <div>
-        <WalletConnectButton />
-      </div>
+      <WalletContextProvider> 
+        <WalletMultiButton />
+      </WalletContextProvider>
     </header>    
   );
 }
