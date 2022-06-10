@@ -5,7 +5,7 @@ import WalletContextProvider from "./WalletContextProvider";
 
 const HeaderSmall = () => {
   return (
-    <header className="small">
+    <header className="header__small">
       <Image src={"/abslogo.jpg"} alt="Abstratica logo" width={90} height={90}/>
       <div>
         <nav className="main-nav">
