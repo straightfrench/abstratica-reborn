@@ -20,6 +20,28 @@
   margin: 0;
 }
 
+.narrow-text-box {
+  position: relative;
+  background-color: white;
+  width: 40%;
+  height: 200px;
+  display: inline-block;
+  border-radius: 16px;
+  vertical-align: middle;
+  margin: 16px;
+  min-width: 300px;
+  box-shadow: 4px 8px 4px rgba(0,0,0,0.25);
+}
+
+.narrow-text-box p {
+  padding: 0 16px;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .investor-box {
   background-color: white;
   width: 100%;
@@ -27,18 +49,20 @@
   border-radius: 16px;
   box-shadow: 4px 8px 4px rgba(0,0,0,0.25);
   margin-bottom: 68px;
-  min-width: 540px;  
+  min-width: 540px;
+  max-width: 70%;
+}
+
+.investor-box ~ div {
+  padding: 0 75px; 
 }
  
 .pfp-and-name{
-   display: inline-block;
-   padding: 0 24px;
+   display: inline-flex;
+   flex-direction: column;
+   padding: 0 5%;
 }
  
 .pfp-and-name img{
    border-radius: 50px;
-}
-
-#first-page-element{
-  padding-top: 50px;
 }

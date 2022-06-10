@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <HeaderBig />
-      <h1 className='section-title text-shadow' id={styles["first-page-element"]}>
+      <h1 className='section-title text-shadow first-page-element'>
         The First GAN Art on Solana
       </h1>
       <div className='sub-container'>
@@ -29,16 +29,16 @@ const Home: NextPage = () => {
       </h1>
 
       <div className='sub-container wide-container'>
-        <div className='text-box'>
+        <div className={styles["narrow-text-box"]}>
           <p>Being the 1st ever GAN art project and the 9th overall project to mint on Solana, Abstratica is a <strong>piece of Solana history</strong>.</p>
         </div>
-        <div className='text-box'>
+        <div className={styles["narrow-text-box"]}>
           <p>Collecting Abstractions will <strong>give you exposure to the 1:1 art scenne</strong> without having to go digging for the next big artists yourself.</p>
         </div>
-        <div className='text-box'>
+        <div className={styles["narrow-text-box"]}>
           <p>Owning just 1 Abstraction allows you to <strong>access our in-discord printing service</strong>. You can print any NFT, in high quality and at affordable prices.</p>
         </div>
-        <div className='text-box'>
+        <div className={styles["narrow-text-box"]}>
           <p>Abstractions are beautiful.<br></br> WE LOVE THE ART!</p>
         </div>
       </div>
@@ -46,17 +46,19 @@ const Home: NextPage = () => {
       <div className='sub-container'>
         <div className={styles["investor-box"]}>
           <h1 className='section-title black-text'>Notable Collectors</h1>
-          <div className={styles["pfp-and-name"]}>
-            <Image src={"/solbigbrain.jpg"} height={100} width={100} alt="solbigbrain"></Image>
-            <p>SolBigBrain</p>
-          </div>
-          <div className={styles["pfp-and-name"]}>
-            <Image src={"/grayscale.jpg"} height={100} width={100} alt="grayscale"></Image>
-            <p>Grayscale</p>
-          </div>
-          <div className={styles["pfp-and-name"]}>
-            <Image src={"/anglio.jpg"} height={100} width={100} alt="anglio"></Image>
-            <p>Anglio</p>
+          <div>
+            <div className={styles["pfp-and-name"]}>
+              <Image src={"/solbigbrain.jpg"} height={100} width={100} alt="solbigbrain"></Image>
+              <p>SolBigBrain</p>
+            </div>
+            <div className={styles["pfp-and-name"]}>
+              <Image src={"/grayscale.jpg"} height={100} width={100} alt="grayscale"></Image>
+              <p>Grayscale</p>
+            </div>
+            <div className={styles["pfp-and-name"]}>
+              <Image src={"/anglio.jpg"} height={100} width={100} alt="anglio"></Image>
+              <p>Anglio</p>
+            </div>
           </div>
         </div>
       </div>
