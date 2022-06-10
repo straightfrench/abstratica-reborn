@@ -1,27 +1,25 @@
-.title{
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0;
-  margin-top: 50px;
-  font-size: 36px;
-  font-weight: 400;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+.container{
+  margin-top: 112px;
+  margin-bottom: 64px;
+  height: calc(100vh - 176px);
 }
 
-.maincontainer{
-  position: absolute;
-  height: 664px;
-  left: 20%;
-  right: 20%;
-  top: 22%;
+.steps-container{
+  width: 55%;
+  height: 75%;
+  margin: auto;
   overflow-y: scroll;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   border-radius: 19px;
+  padding: 0;
 }
 
-.maincontainer::-webkit-scrollbar{
+.steps-container::-webkit-scrollbar{
   width: 0 !important
+}
+
+.bold{
+  font-weight: bold;
+  font-size: 24px;
 }
