@@ -2,12 +2,10 @@ import styles from "../styles/SearchCard.module.css"
 
 const SearchCard = () => {
   return (
-    <div className={styles.card}>
+    <div className={styles["search-card"]}>
       <form>
-        <div>
-          <button>Full collection</button>
-          <button>My collection</button>
-        </div>
+        <button className={styles["collection-button"]} >Full collection</button>
+        <button className={styles["collection-button"]} >My collection</button>
         <div>
           <label>Frame</label>
           <select name="frames" id="frame">
@@ -28,8 +26,8 @@ const SearchCard = () => {
           </select>
         </div>
         <div>
-          <label>Number (syntax: 1,2,7-13)</label>
-          <input></input>
+          <label>Abstraction</label>
+          <input placeholder="Number (syntax: 1,2,7-13)"></input>
         </div>
       </form>
     </div>
