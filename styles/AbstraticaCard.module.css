@@ -13,6 +13,10 @@
   height: 324px;
 }
 
+.card:hover{
+  cursor: pointer;
+}
+
 .text {
   display: flex;
 }
