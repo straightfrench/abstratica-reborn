@@ -18,9 +18,7 @@ const HeaderSmall = () => {
           </ul>
         </nav>
       </div>
-      <WalletContextProvider> 
         <WalletMultiButton />
-      </WalletContextProvider>
     </header>
   );
 }

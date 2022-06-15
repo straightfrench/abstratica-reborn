@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        <p>Powered by</p>
+        Powered by
         <Image src="/footer/tensorflow.svg" alt="tensorflow" height={40} width={40} />
         <Image src="/footer/solana.svg" alt="solana logo" height={40} width={40} />
       </div>
