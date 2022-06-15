@@ -12,11 +12,19 @@
 }
 
 .search-card button {
+  display: inline-block;
   border-radius: 25px;
   border: none;
   margin: 25px;
+  margin-bottom: 0;
   padding: 8px 16px;
   font-family: inherit;
+}
+
+.search-card button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 .search-card div {

@@ -3,7 +3,7 @@
   margin-bottom: 64px;
 }
 
-#full-collection-title{padding-top: 16px;}
+#collection-title{padding-top: 16px;}
 
 .search-container{
   margin: 24px 0px;
@@ -14,7 +14,7 @@
   position: relative;
   right: 0;
   width: 100%;
-  height: 70vh;
+  height: calc(100vh - 112px - 64px - 222px);
   vertical-align: middle;
   overflow-y: scroll;
   overflow: -moz-scrollbars-none;
