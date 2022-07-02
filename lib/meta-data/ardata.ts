@@ -1,6 +1,9 @@
+/** Total number of abstractions. */
+export const NUM_ABSTRACTIONS : number = 4200;
+
 /** URI suffixes, arweave.net/(arImg | arErc),
     for abstraction meta-data stored on Arweave. */
-export const ArUriSuffix = [
+export const ArweaveUriSuffix = [
   {
     arImg: "deQ7htvCV4sf0E12NC8kap2-d2cgF-Ctgmi_9OsEkaM",
     arErc: "gad3kJFfMvYxAh9Eqb5yMSgO0dvss4MLX-0yEXZXLW4",
