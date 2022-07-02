@@ -14,10 +14,11 @@ export const ARWEAVE_URL : string = "http://arweave.net/";
 
 /**
  * Loads all abstractions associated to the primary key pk.
+ * Look at https://solanacookbook.com/references/nfts.html#how-to-get-all-nfts-from-a-wallet
  * @param pk the public key owning the abstractions.
  * @return . 
  */
-export async function loadAbstractionsFromPk() : Promise<Abstraction[]> {
+export async function loadOwnedAbstractions() : Promise<Abstraction[]> {
     
     const edKey : PublicKey = new PublicKey(
       "6UtdsujtfEbhsSmjak34qrBLV3LsAnVn3mynTwMXBBcP"
@@ -58,14 +59,14 @@ export const PAGE_SIZE : number = 20;
 export async function loadArweaveAbstractionPage(pageNum : number) : Promise<AbstractionPreview[]> {
 
     let l : number = pageNum * PAGE_SIZE;
-    let arweaveAbstractionErc : { arImg: string, arErc: string }[] =
+    let arweaveAbstractions : { arImg: string, arErc: string }[] =
         ArweaveUriSuffix.slice(l, l + PAGE_SIZE);
 
     try {
       let response = await axios.all(
-        arweaveAbstractionErc.map(arweaveErc => axios({
+        arweaveAbstractions.map(arweaveAbs => axios({
             method: 'get',
-            url: ARWEAVE_URL + arweaveErc,
+            url: ARWEAVE_URL + arweaveAbs.arErc,
             responseType: 'json'
         }))
       );
