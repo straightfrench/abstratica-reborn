@@ -242,14 +242,9 @@
   dependencies:
     "glob" "7.1.7"
 
-"@next/swc-linux-x64-gnu@12.1.6":
-  "integrity" "sha512-AC7jE4Fxpn0s3ujngClIDTiEM/CQiB2N2vkcyWWn6734AmGT03Duq6RYtPMymFobDdAtZGFZd5nR95WjPzbZAQ=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.1.6.tgz"
-  "version" "12.1.6"
-
-"@next/swc-linux-x64-musl@12.1.6":
-  "integrity" "sha512-c9Vjmi0EVk0Kou2qbrynskVarnFwfYIi+wKufR9Ad7/IKKuP6aEhOdZiIIdKsYWRtK2IWRF3h3YmdnEa2WLUag=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.1.6.tgz"
+"@next/swc-win32-x64-msvc@12.1.6":
+  "integrity" "sha512-4ZEwiRuZEicXhXqmhw3+de8Z4EpOLQj/gp+D9fFWo6ii6W1kBkNNvvEx4A90ugppu+74pT1lIJnOuz3A9oQeJA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.6.tgz"
   "version" "12.1.6"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -571,7 +566,7 @@
     "@solana/wallet-adapter-tokenpocket" "^0.4.2"
     "@solana/wallet-adapter-torus" "^0.11.10"
 
-"@solana/web3.js@^1.20.0", "@solana/web3.js@^1.21.0", "@solana/web3.js@^1.30.2", "@solana/web3.js@^1.31.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.35.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.43.1", "@solana/web3.js@^1.5.0":
+"@solana/web3.js@^1.20.0", "@solana/web3.js@^1.30.2", "@solana/web3.js@^1.31.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.35.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.43.1", "@solana/web3.js@^1.5.0":
   "integrity" "sha512-/PF4Fp+2jvCt9R3hYrf+tVUZXpPXZaHcwpaY/ytgdcswy8YiYf2snug52BJTCTlxwiXJipS4JpIo7rJJO0nN6w=="
   "resolved" "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.43.5.tgz"
   "version" "1.43.5"
@@ -1159,7 +1154,7 @@
   "resolved" "https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.3.tgz"
   "version" "1.0.3"
 
-"buffer@^6.0.3", "buffer@6.0.3":
+"buffer@^6.0.3":
   "integrity" "sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA=="
   "resolved" "https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz"
   "version" "6.0.3"
