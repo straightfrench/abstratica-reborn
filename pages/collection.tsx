@@ -1,10 +1,12 @@
 import HeaderSmall from "../components/HeaderSmall";
 import AbstraticaCard from "../components/AbstraticaCard";
-import styles from "../styles/Collection.module.css"
+import SearchCard from "../components/SearchCard";
+
 import { FC, useState, useEffect } from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import SearchCard from "../components/SearchCard";
 import { WalletConnectButton, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+import styles from "../styles/Collection.module.css"
 
 const FullCollection: FC = () => {
     
@@ -21,7 +23,7 @@ const FullCollection: FC = () => {
 
   
   if (collection) {
-    if( !connection || !publicKey) {
+    if(!connection || !publicKey) {
       return(
         <div>
           <HeaderSmall />

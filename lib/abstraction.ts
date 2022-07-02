@@ -1,23 +1,24 @@
 /**
- * @fileoverview Responsible for loading abstractions from
- *      the Solana blockchain.
+ * @fileoverview Responsible for loading abstractions from the Solana blockchain.
  */
 
 import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { PublicKey, clusterApiUrl, Connection } from "@solana/web3.js";
 
+import { Metadata } from "@metaplex-foundation/mpl-token-metadata";
+
 import { networkConnection } from "./connection.ts";
-//import { METADATA_SCHEME } from "./meta-data/meta-data-schema.ts";
+import { METADATA_SCHEME } from "./meta-data/meta-data-schema.ts";
 import { ArUriSuffix } from "./meta-data/ardata.ts";
 
 import axios from "axios";
 
 /**
- * Loads all abstractions owned by pk.
+ * Loads all abstractions associated to the primary key pk.
  * @param pk the public key owning the abstractions.
  * @return . 
  */
-export async function loadPkAbs() {
+export async function loadAbstractionsFromPk() {
 
     const METADATA_PROGRAM_ID : PublicKey = new PublicKey(
         "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
@@ -27,38 +28,29 @@ export async function loadPkAbs() {
         "6UtdsujtfEbhsSmjak34qrBLV3LsAnVn3mynTwMXBBcP"
     );
 
-    const filter = {
-        filters: [
-            {
-                memcmp: {
-                    offset: 32,
-                    bytes: edKey.toBase58(),
-                },
-            },
-            {
-                dataSize: 165
-            }
-        ],
-    };
+    let accounts = await networkConnection.getParsedTokenAccountsByOwner(
+        edKey, { programId: TOKEN_PROGRAM_ID }
+    )
 
-    const pkAccounts = await networkConnection.getProgramAccounts(
-        TOKEN_PROGRAM_ID, filter
-    );
-    
-    pkAccounts.forEach((a, i) => {
-        if(i==0) {
-            console.log(
-              `-- Token Account Address ${i + 1}: ${account.pubkey.toString()} --`
-            );
-            console.log(a.account.data);
-            /*console.log(`Mint: ${account.account.data["parsed"]["info"]["mint"]}`);
-            console.log(
-              `Amount: ${account.account.data["parsed"]["info"]["tokenAmount"]["uiAmount"]}`
-            );*/
-
-
-        }
+    let mints = accounts.value.map(tokenAccount => {
+        let pk = new PublicKey(
+            tokenAccount.account["data"]["parsed"]["info"]["mint"]
+        );
+        return pk;
     });
+
+    // Get all token meta-data
+    for(const mintPk of mints) {
+        // for explicit deserialising of token meta-data see
+        // https://gist.github.com/dvcrn/c099c9b5a095ffe4ddb6481c22cde5f4
+
+        let tokenMetaPk = await Metadata.getPDA(mintPk);
+        let tokenMeta = await Metadata.load(networkConnection, tokenMetaPk);
+        
+        console.log(tokenMeta.data.data["uri"]);
+
+        break;
+    }
 }
 
 
@@ -78,7 +70,7 @@ export const ARWEAVE_URL : string = "http://arweave.net/";
  * @params pageNum Page number to be loaded.
  * @return absPrev Array of abstraction previews.
  */
-export async function loadArAbs(pageNum : number) {
+export async function loadArweaveAbstractionPage(pageNum : number) {
 
     let l : number = pageNum * PAGE_SIZE;
     let abs = ArUriSuffix.slice(l, l + PAGE_SIZE);
@@ -88,6 +80,7 @@ export async function loadArAbs(pageNum : number) {
             method: 'get',
             url: ARWEAVE_URL + a.arErc,
             responseType: 'json'
+
         }))).then(function(response) {
             let absPrev = response.map(function(r) {
                 return {
@@ -96,10 +89,34 @@ export async function loadArAbs(pageNum : number) {
                     symbol: r.data.symbol,
                 };
             });
-            console.log(absPrev);
+
             return absPrev;
         }
     );
+}
+
+/**
+ * Loads a single abstraction from Arweave.
+ * 
+ * @param absId The Arweave abstraction id.
+ * @return  
+ */
+export async function loadSingleArweaveAbstraction(absId : string) {
+    axios({
+        method: 'get',
+        url: ARWEAVE_URL + absId,
+        responseType: 'json'
+    }).then(function(response) {
+        let abs = response.map(function(r) {
+            return {
+                name: r.data.name,
+                imageUri: r.data.image,
+                symbol: r.data.symbol,
+            };
+        });
+
+        return abs;
+    });
 }
 
 
