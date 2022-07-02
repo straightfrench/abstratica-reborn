@@ -1,8 +1,3 @@
-/**
- * @fileoverview Provides connection object used to communicate with
- * the solana blockchain.
- */
-
 import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 
 /** Mainnet connection object. */
